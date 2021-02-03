@@ -1,0 +1,8 @@
+# Default ignored files
+/../../../../:pythonProject/NmapTest/.idea/shelf/
+/../../../../:pythonProject/NmapTest/.idea/workspace.xml
+# Datasource local storage ignored files
+/../../../../:pythonProject\NmapTest\.idea/dataSources/
+/../../../../:pythonProject/NmapTest/.idea/dataSources.local.xml
+# Editor-based HTTP Client requests
+/../../../../:pythonProject/NmapTest/.idea/httpRequests/
