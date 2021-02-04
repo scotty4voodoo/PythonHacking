@@ -1,6 +1,6 @@
 ## Project Name : PythonHacking
-# Author        : Scott Lim (Republic of Korea)
-# description   : This repository was made for upload python hacking tools made by personal
+- Author        : Scott Lim (Republic of Korea)
+- description   : This repository was made for upload python hacking tools made by personal
 
 Python hacking script uploaded in here
 
