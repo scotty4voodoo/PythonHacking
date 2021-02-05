@@ -13,5 +13,5 @@ for port in range (port_start,port_end):
     result = sc.connect_ex((ip,port))
 
     if result == 0:
-        print("[*] Open Port : \t",e)
+        print("[*] Open Port : \t",port)
     sc.close()
