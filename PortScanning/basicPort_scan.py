@@ -15,3 +15,5 @@ for port in range (port_start,port_end):
     if result == 0:
         print("[*] Open Port : \t",port)
     sc.close()
+
+print("Done!!")
